@@ -1,0 +1,841 @@
+<html>
+    <head>
+        <!-- <meta http-equiv="refresh" content="2"> -->
+
+        <title>My Website</title>
+        <link rel="stylesheet" href="css/all.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+            .custom-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-img {
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 767.98px) {
+            .card-img {
+                height: 200px;
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                clip-path: none; 
+            }
+            .image-col {
+                order: -1;
+            }
+        }
+        @media (min-width: 768px) {
+            .card-img {
+                height: 300px;
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 40% 100%);
+            }
+        }
+        @media (max-width: 767.98px) {
+            .cardd-img {
+                height: 200px;
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                clip-path: none; 
+            }
+            .image-col {
+                order: -1;
+            }
+        }
+        @media (min-width: 768px) {
+            .cardd-img {
+                height: 300px;
+                clip-path: polygon(0 0, 100% 0, 68% 100%, 0% 100%);
+            }
+        }
+
+    .carddd {
+      width: 200px;
+      text-align: center;
+      padding: 15px;
+      margin: 10px;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+
+    .carddd-title {
+      font-weight: bold;
+      color: #1d3e6e;
+      font-size: 1.1rem;
+    }
+
+    .sociall-icon {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin: 10px auto;
+    }
+
+    .carddd a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 500;
+    }
+
+    .carddd a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: #2c2c2c;
+      color: white;
+      padding: 40px 0 20px;
+    }
+
+    .footer-card {
+      background-color: #2c2c2c;
+      border: none;
+      color: white;
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .footer-title {
+      font-style: italic;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .footer-link {
+      display: block;
+      margin-bottom: 6px;
+      text-decoration: none;
+      color: #f7c01b;
+      font-size: 14px;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 14px;
+      color: #c9a955;
+      margin-top: 30px;
+    }
+
+    .footer-line {
+      border-top: 1px solid #555;
+      margin: 10px auto;
+      width: 50%;
+    }
+
+    hr {
+      border-top: 1px solid #555;
+      margin-bottom: 30px;
+    }
+        </style>
+    </head>
+    <body>
+        
+
+       <nav class="navbar navbar-expand-sm navbar-dark bg-Secondary " style="top: 0;  position: fixed; z-index: 1000; width: 100%;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="javascript:void(0)"><img src="./images/site logo.webp" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                     <div class="btn-group">
+                    <button type="button" class="btn  text-light dropdown-toggle" data-bs-toggle="dropdown">Orders</button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Tablet</a>
+                        <a class="dropdown-item" href="#">Smartphone</a>
+                        <hr>
+                        <a class="dropdown-item" href="#">Smartphone</a>
+                        <a class="dropdown-item" href="#">Smartphone</a>
+                        <a class="dropdown-item" href="#">Smartphone</a>
+                    </div>
+                 </div>
+                  </li>
+
+                 
+                </ul>
+                <form class="d-flex pt-2">
+                  <input class="form-control me-2" type="text" placeholder="Search">
+                  <button class="btn btn-primary" type="button">Search</button>
+                  <!-- <button class="btn bg-white text-primary mx-1" type="button">Login</button> -->
+                   <div class="mx-1 text-center">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">login </button>
+    </div>
+
+    <!-- نافذة التسجيل المنبثقة -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">تسجيل الدخول</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">اسم المستخدم</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">كلمة المرور</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+                </form>
+                
+              </div>
+            </div>
+            
+        </nav>
+       
+
+
+
+                <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide custom-carousel" data-bs-ride="carousel" >
+        
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+          </div>
+
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./images/sec1.jpg" alt="Los Angeles" class="d-block" style="width:100%" >
+              <div class="carousel-caption border" style="background: rgba(0, 0, 0, 0.3); margin-bottom: 20px;">
+                <h3 class="text">Los Angeles</h3>
+                <p class="text">We had such a great time in LA!</p>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <img src="./images/sec2.jpg" alt="Chicago" class="d-block" style="width:100%">
+              <div class="carousel-caption border" style="background: rgba(0, 0, 0, 0.3); margin-bottom: 20px;">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago!</p>
+              </div> 
+            </div>
+            <div class="carousel-item">
+              <img src="./images/sec3.jpg" alt="New York" class="d-block" style="width:100%">
+              <div class="carousel-caption border" style="background: rgba(0, 0, 0, 0.3); margin-bottom: 20px;">
+                <h3>New York</h3>
+                <p>We love the Big Apple!</p>
+              </div>  
+            </div>
+          </div>
+  
+          <!-- Left and right controls/icons -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="containe-xxl  pb-4" style="border-bottom: 1px black solid;">    <!-- this is nooot containerrrrrrrrrrrrrr -->
+        <div class="containe-xxl p-3" style="width:100%; ">
+              <div class="card-body" style="border: none;">
+              <h2 class="text-capitalize "> welcome </h2>
+              <h4 class="card-title">John Doe</h4>
+              <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+              <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+        </div>
+        </div>
+
+      <div class="bigger">
+        <div class="section-title bg-Secondary" style="background: gray;">
+            The Most Famous Dishes In Our Restaurant
+        </div>
+      </div>
+
+                <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <!-- <div class="btn-group-vertical">
+  
+            <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Tablet</a>
+      <a class="dropdown-item" href="#">Smartphone</a>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Tablet</a>
+      <a class="dropdown-item" href="#">Smartphone</a>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Tablet</a>
+      <a class="dropdown-item" href="#">Smartphone</a>
+    </div>
+  </div>
+
+        </div> -->
+
+       
+<div class="container-fluid mt-3 border pb-4 pt-3">
+  <div class="accordion" id="foodAccordion">
+
+    <!-- Fried Chicken -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingChicken">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseChicken" aria-expanded="true" aria-controls="collapseChicken">
+          Fried Chicken
+        </button>
+      </h2>
+      <div id="collapseChicken" class="accordion-collapse collapse" aria-labelledby="headingChicken" data-bs-parent="#foodAccordion">
+        <div class="accordion-body">
+          A crispy and flavorful meal made with tender chicken pieces, seasoned with special herbs and spices, coated in a golden crunchy crust. Perfectly fried and served hot with fries, coleslaw, or your favorite sauce.
+        </div>
+      </div>
+    </div>
+
+    <!-- Salad -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSalad">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalad" aria-expanded="false" aria-controls="collapseSalad">
+          Types of Salad
+        </button>
+      </h2>
+      <div id="collapseSalad" class="accordion-collapse collapse" aria-labelledby="headingSalad" data-bs-parent="#foodAccordion">
+        <div class="accordion-body">
+          - Caesar Salad<br>
+          - Greek Salad<br>
+          - Garden Salad<br>
+          - Pasta Salad
+        </div>
+      </div>
+    </div>
+
+    <!-- Pizza -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingPizza">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePizza" aria-expanded="false" aria-controls="collapsePizza">
+          Types of Pizza
+        </button>
+      </h2>
+      <div id="collapsePizza" class="accordion-collapse collapse" aria-labelledby="headingPizza" data-bs-parent="#foodAccordion">
+        <div class="accordion-body">
+          - Margherita<br>
+          - Pepperoni<br>
+          - BBQ Chicken<br>
+          - Veggie Delight
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ///////////////////////////////////////////////////////////////////  -->
+
+        <div class="bigger">
+            <div class="section-title bg-Secondary">
+                The Most Famous Dishes In Our Restaurant
+            </div>
+        </div>
+
+
+    <div class="container-xxl py-5" style="background: rgb(180, 179, 179);">
+  <div class="title-custom">
+    Write And Translate <span class="highlight text-dark" style="font-weight: bold;">Press Here</span>
+  </div>
+
+  <button  class="btn btnn bg-info text-white mt-3 mb-3">copy</button>
+  <div class="divdis"></div>
+
+  <div class="translator-box">
+    <textarea class="p-3 form-control w-900" id="translateArea" placeholder="translate:" ></textarea>
+  </div>
+    </div>
+    <!-- /////////////////////////// -->
+
+        <div class="bigger">
+            <div class="section-title bg-Secondary">
+                The Most Famous Dishes In Our Restaurant
+            </div>
+        </div>
+
+
+    <div class="container-xxl py-5" style="background: rgb(180, 179, 179);">
+  <div class="title-custom">
+    Write And Translate <span class="highlight text-dark" style="font-weight: bold;">Press Here</span>
+  </div>
+
+  <button class="btn btnnn bg-info text-white mt-3 mb-3">copy</button>
+
+  <div class="translator-box">
+    <textarea class="p-3 form-control w-900" id="translateArea" placeholder="translate:" ></textarea>
+  </div>
+    </div>
+
+    <!-- /////////////////////////////////////////////// -->
+
+    <div class="bigger">
+        <div class="section-title bg-Secondary">
+            The Most Famous Dishes In Our Restaurant
+        </div>
+    </div>
+
+
+    <div class="container-xxl py-5" style="background: rgb(180, 179, 179);">
+  <div class="title-custom">
+    Write And Translate <span class="highlight text-dark" style="font-weight: bold;">Press Here</span>
+  </div>
+
+  <button class="btn btnnnn bg-info text-white mt-3 mb-3">copy</button>
+
+  <div class="translator-box">
+    <textarea class="p-3 form-control w-900" id="translateArea" placeholder="translate:" ></textarea>
+  </div>
+    </div>
+    <!-- ///////////////////////////////////// -->
+
+    <div class="container-xxl immgg">
+
+    </div>
+
+
+    <!-- ///////////////////////////////////////// -->
+
+    <div class="bigger">
+        <div class="section-title bg-Secondary">
+            The Most Famous Dishes In Our Restaurant
+        </div>
+    </div>
+
+        <!-- //////////////////////////////////////////////////// -->
+
+        <div class="container pt-4">
+
+            <div class="row justify-content-center gap-5" style="justify-content: space-between;">
+
+                <div class="card" style="width:300px ; height: 350px;">
+                    <img class="card-img-top" src="./images/network3.jpg" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title text-capitalize">our food</h4>
+                    <div class="text-end">
+                    <a href="#" class="btn btn-primary">Order now</a>
+                    </div>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+                <div class="card" style="width:300px ; height: 350px;">
+                    <img class="card-img-top" src="./images/network3.jpg" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title text-capitalize">our food</h4>
+                      <div class="text-end">
+                    <a href="#" class="btn btn-primary">Order now</a>
+                    </div>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+                <div class="card" style="width:300px ; height: 350px;">
+                    <img class="card-img-top" src="./images/network3.jpg" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title text-capitalize">our food</h4>
+                      <div class="text-end">
+                    <a href="#" class="btn btn-primary">Order now</a>
+                    </div>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- //////// -->
+
+        <div class="container pt-4">
+
+            <div class="row justify-content-center gap-5" style="justify-content: space-between;">
+
+                <div class="card" style="width:300px ; height: 350px;">
+                    <img class="card-img-top" src="./images/network3.jpg" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title text-capitalize">our food</h4>
+                      <div class="text-end">
+                    <a href="#" class="btn btn-primary">Order now</a>
+                    </div>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+                <div class="card" style="width:300px ; height: 350px;">
+                    <img class="card-img-top" src="./images/network3.jpg" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title text-capitalize">our food</h4>
+                      <div class="text-end">
+                    <a href="#" class="btn btn-primary">Order now</a>
+                    </div>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+                <div class="card" style="width:300px ; height: 350px;">
+                    <img class="card-img-top" src="./images/network3.jpg" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title text-capitalize">our food</h4>
+                      <div class="text-end">
+                    <a href="#" class="btn btn-primary">Order now</a>
+                    </div>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- /////////////////////////////// -->
+         <div class="container pt-4">
+
+            <div class="row justify-content-center gap-5" style="justify-content: space-between;">
+
+                <div class="card" style="width:300px ; height: 350px;">
+                    <img class="card-img-top" src="./images/network3.jpg" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title text-capitalize">our food</h4>
+                      <div class="text-end">
+                    <a href="#" class="btn btn-primary">Order now</a>
+                    </div>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+                <div class="card" style="width:300px ; height: 350px;">
+                    <img class="card-img-top" src="./images/network3.jpg" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title text-capitalize">our food</h4>
+                      <div class="text-end">
+                    <a href="#" class="btn btn-primary">Order now</a>
+                    </div>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ////////////////////////////////////////// //////// ////// ///// //// //// ///// // -->
+
+
+         <div class="container-xxl immggg mt-5">
+
+    </div>
+
+
+    <!-- ///////////////////////////////////////// -->
+
+    <div class="bigger">
+        <div class="section-title bg-Secondary">
+            -- Thanks for --
+        </div>
+    </div>
+
+        <!-- ///////////////////////////////////////////////// -->
+
+        <div class="container mt-5"> <!-- start -->
+
+            <div class="row justify-content-center gap-3">
+
+                <div class="card bg-Secondary" style="width:300px">
+  <div class="card-body">
+    <h4 class="card-title text-light" style="font-size: 15px; opacity: .5;">All All Thanks</h4>
+    <p class="card-text text-light" style="font-size: 15px; opacity: .5;">25 may 2006</p>
+
+    <div class="card " style="width:250px; border: none;">
+  <img class="card-img-top" style="width: 110px; height: 140px; border-radius: 60px; padding: 5px; margin-bottom: -10px;" src="images/network4.jpg" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">youssef ramadan</h4>
+    <p class="card-text">frontend and backend</p>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+<div class="card bg-Secondary" style="width:300px">
+  <div class="card-body">
+    <h4 class="card-title text-light" style="font-size: 15px; opacity: .5;">All All Thanks</h4>
+    <p class="card-text text-light" style="font-size: 15px; opacity: .5;">25 may 2006</p>
+
+    <div class="card " style="width:250px; border: none;">
+  <img class="card-img-top" style="width: 110px; height: 140px; border-radius: 60px; padding: 5px; margin-bottom: -10px;" src="images/network4.jpg" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">youssef ramadan</h4>
+    <p class="card-text">frontend and backend</p>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+<div class="card bg-Secondary" style="width:300px">
+  <div class="card-body">
+    <h4 class="card-title text-light" style="font-size: 15px; opacity: .5;">All All Thanks</h4>
+    <p class="card-text text-light" style="font-size: 15px; opacity: .5;">25 may 2006</p>
+
+    <div class="card " style="width:250px; border: none;">
+  <img class="card-img-top" style="width: 110px; height: 140px; border-radius: 60px; padding: 5px; margin-bottom: -10px;" src="images/network4.jpg" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">youssef ramadan</h4>
+    <p class="card-text">frontend and backend</p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+            </div>
+
+            <h2 class="text-capitalize mt-5 " style="text-align: center;">our news</h2>
+
+            <div class="container mt-5">
+        <div class="card custom-card">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize">podcast title</h5>
+                        <p class="card-text text-muted"> 25 / 5 / 2006</p>
+                        <p class="card-text">In our kitchen, the passion doesn't stop at just the taste; it extends to include innovation and renewal in every detail of our dishes and services. We are always passionate about bringing something new to lovers of distinctive flavors, from seasonal dishes made with the finest fresh ingredients to special offers that we continuously prepare for you. Follow the news section to stay updated with the latest updates, whether they are new recipes, special events, or the launch of innovative products that suit all tastes.</p>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">Podcast</span>
+                            <span class="me-3">⏳ 43 minite</span>
+                            <button class="btn btn-custom">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 image-col">
+                    <img src="images/pd1.jpg" class="img-fluid card-img" alt="صورة الوجبة">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card custom-card">
+            <div class="row g-0">
+                <div class="col-md-4 image-col">
+                    <img src="images/pd2.jpg" class="img-fluid cardd-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize"> podcast title</h5>
+                        <p class="card-text text-muted">25 / 5 / 2006</p>
+                        <p class="card-text">In our kitchen, the passion doesn't stop at just the taste; it extends to include innovation and renewal in every detail of our dishes and services. We are always passionate about bringing something new to lovers of distinctive flavors, from seasonal dishes made with the finest fresh ingredients to special offers that we continuously prepare for you. Follow the news section to stay updated with the latest updates, whether they are new recipes, special events, or the launch of innovative products that suit all tastes.</p>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">Podcast</span>
+                            <span class="me-3">⏳ 43 minite</span>
+                            <button class="btn btn-custom">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card custom-card">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize"> podcast title</h5>
+                        <p class="card-text text-muted">25 / 5 / 2006</p>
+                        <p class="card-text">In our kitchen, the passion doesn't stop at just the taste; it extends to include innovation and renewal in every detail of our dishes and services. We are always passionate about bringing something new to lovers of distinctive flavors, from seasonal dishes made with the finest fresh ingredients to special offers that we continuously prepare for you. Follow the news section to stay updated with the latest updates, whether they are new recipes, special events, or the launch of innovative products that suit all tastes.</p>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">Podcast</span>
+                            <span class="me-3">⏳ 43 minite</span>
+                            <button class="btn btn-custom">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 image-col">
+                    <img src="images/pd1.jpg" class="img-fluid card-img" alt="صورة الوجبة">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card custom-card">
+            <div class="row g-0">
+                <div class="col-md-4 image-col">
+                    <img src="images/pd2.jpg" class="img-fluid cardd-img" alt="صورة الوجبة">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize">podcast title </h5>
+                        <p class="card-text text-muted">25 / 5 / 2006</p>
+                        <p class="card-text">In our kitchen, the passion doesn't stop at just the taste; it extends to include innovation and renewal in every detail of our dishes and services. We are always passionate about bringing something new to lovers of distinctive flavors, from seasonal dishes made with the finest fresh ingredients to special offers that we continuously prepare for you. Follow the news section to stay updated with the latest updates, whether they are new recipes, special events, or the launch of innovative products that suit all tastes.</p>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">Podcast</span>
+                            <span class="me-3">⏳ 43 minite</span>
+                            <button class="btn btn-custom">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div> <!-- end div container -->
+
+        <!-- //////////////////////////////////////////// -->
+
+        <div class="container py-5">
+  <div class="d-flex justify-content-center flex-wrap">
+
+    <!-- WhatsApp -->
+    <div class="card carddd">
+      <h6 class="card-title carddd-title">Subscribe Now</h6>
+      <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp" class="social-icon sociall-icon">
+      <a href="#">Go To Link</a>
+    </div>
+
+    <!-- Instagram -->
+    <div class="card carddd">
+      <h6 class="card-title carddd-title">Subscribe Now</h6>
+      <img src="https://img.icons8.com/color/96/instagram-new.png" alt="Instagram" class="social-icon sociall-icon">
+      <a href="#">Go To Link</a>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="card carddd ">
+      <h6 class="card-title carddd-title">Subscribe Now</h6>
+      <img src="https://img.icons8.com/color/96/linkedin.png" alt="LinkedIn" class="social-icon sociall-icon">
+      <a href="#">Go To Link</a>
+    </div>
+
+    <!-- Twitter -->
+    <div class="card carddd">
+      <h6 class="card-title carddd-title">Subscribe Now</h6>
+      <img src="https://img.icons8.com/color/96/twitter--v1.png" alt="Twitter" class="social-icon sociall-icon">
+      <a href="#">Go To Link</a>
+    </div>
+
+  </div>
+</div>
+
+
+<footer class="container-fluid">
+  <div class="container">
+    <hr>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <!-- Column 1 -->
+      <div class="col">
+        <div class="card footer-card h-100">
+          <div class="card-body">
+            <img src="https://img.icons8.com/color/96/restaurant.png" alt="Logo" class="footer-logo">
+            <h6 class="footer-title">Good Company</h6>
+            <hr class="footer-line">
+            <p class="footer-link">Tel: 000-000-000</p>
+            <p class="footer-link">Address: EGYPT</p>
+            <p class="footer-link">Fax: 000-000-000</p>
+            <hr class="footer-line">
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="col">
+        <div class="card footer-card h-100">
+          <div class="card-body">
+            <img src="https://img.icons8.com/color/96/restaurant.png" alt="Logo" class="footer-logo">
+            <h6 class="footer-title">Important Links</h6>
+            <hr class="footer-line">
+            <a href="#" class="footer-link">Visit Us</a>
+            <a href="#" class="footer-link">Take A Look</a>
+            <a href="#" class="footer-link">Your Health Is More Important</a>
+            <hr class="footer-line">
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="col">
+        <div class="card footer-card h-100">
+          <div class="card-body">
+            <img src="https://img.icons8.com/color/96/restaurant.png" alt="Logo" class="footer-logo">
+            <h6 class="footer-title">Vision</h6>
+            <hr class="footer-line">
+            <a href="#" class="footer-link">Services For All</a>
+            <a href="#" class="footer-link">Provide Best Services</a>
+            <a href="#" class="footer-link">You Will Be Better Than Before</a>
+            <hr class="footer-line">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Note -->
+    <div class="footer-note">
+      &copy; 2025 FoodExpress. All Rights Reserved. Designed By <strong>YOUSSEF RAMADAN MOHAMED SAYED</strong>.
+    </div>
+  </div>
+</footer>
+
+
+
+
+        <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
